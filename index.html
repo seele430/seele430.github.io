@@ -285,11 +285,26 @@
     <a class="big-link" href="https://github.com/seele430/Personal-Agent" target="_blank" rel="noopener">在 GitHub 看源码 →</a>
     <span>截图均为本机真实运行界面，2026 年 11 月。</span>
   </div>
+  <div class="row" style="margin-top:12px">
+    <span style="font-size:12.5px;color:#9aa39d">页面更新于 <span id="built">—</span></span>
+  </div>
   <p class="fineprint">
     顺手做过的另外两个 agent 项目：DeepResearch（手写 ReAct 控制流 + 原生 Function Calling 的多步调研 agent）、
     ResearchSwarm（Planner / Researcher / Analyst / Writer / Critic 五 agent 协作 + FastAPI/SSE 界面）。
   </p>
 </footer>
+
+<script>
+  // 显示页面在服务器上的最后更新时间：看到旧时间就说明浏览器缓存了旧版本
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('built');
+    if (!el) return;
+    var d = new Date(document.lastModified);
+    if (isNaN(d.getTime())) { el.textContent = '未知'; return; }
+    var s = d.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
+    el.textContent = s.slice(0, 16);
+  });
+</script>
 
 </body>
 </html>
