@@ -224,26 +224,31 @@
   <div class="note">
     <b>生成物自带口径声明。</b>每张海报底部都标注数据来源，并写明“未联网核实的数字仅供参考”——宁可先声明可信度，也不让一张好看的图冒充权威结论。
   </div>
+  <p style="margin-top:20px;font-size:14px;color:var(--muted)">
+    同一条通道交付的不只有图 —— 下一节那个能玩的扫雷，就是从手机 QQ 里要出来的。
+  </p>
 </section>
 
 <section id="game" class="wrap">
-  <div class="sec-head"><span class="num">04</span><h2>让它自己写一个游戏</h2></div>
+  <div class="sec-head"><span class="num">04</span><h2>QQ 通道的产物：一个能玩的游戏</h2><span class="chip">来自手机 QQ</span></div>
   <p class="sec-lead">
-    同一个工作台，换一个需求：产出的不是一张图，而是一个<strong>能直接运行的游戏</strong>。
-    单文件 HTML、零外部依赖、不到 40 KB，鼠标和键盘都能玩。
+    还是上一节那条通道，只是这次要的不是图，而是<strong>能直接跑的程序</strong>：
+    手机 QQ 里发一句话 → 本机把代码写完、打包成单个 HTML、回传聊天窗口 → 点开就能玩。
+    单文件、零外部依赖、不到 40 KB，鼠标键盘都支持。
   </p>
   <figure>
     <a href="images/game-minesweeper.png" target="_blank"><img src="images/game-minesweeper.png" alt="扫雷游戏界面" loading="lazy"></a>
     <figcaption>
-      <b>扫雷</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
-      方向键移动 + <code>Enter</code> 翻开 + <code>F</code> 插旗 + <code>R</code> 重开。生成后没有人工改过代码。
+      <b>扫雷 · 由 PA 自主生成</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
+      方向键移动 + <code>Enter</code> 翻开 + <code>F</code> 插旗 + <code>R</code> 重开。需求从 QQ 发出，成品从 QQ 回传。
     </figcaption>
   </figure>
   <div style="margin-top:20px">
     <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">在线玩一局 →</a>
   </div>
   <div class="note">
-    <b>这条比截图有说服力得多。</b>能生成图文的 agent 不少，能把需求落成一个别人点开就能玩的东西、并且自己保证没有外部依赖的，少一大截。
+    <b>QQ 通道在这里不是“发通知的口”，而是一条完整的交付链路。</b>需求从手机进、代码在本机出、成品回到聊天窗口 ——
+    中间不需要我坐到电脑前。能生成图文的 agent 不少；能从一句话拿到一个别人点开就能玩的程序、产物还自己保证零外部依赖的，少得多。
   </div>
 </section>
 
