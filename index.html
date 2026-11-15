@@ -92,6 +92,7 @@
     <a href="#desktop">桌面工作台</a>
     <a href="#platform">平台控制台</a>
     <a href="#qq">QQ 远程通道</a>
+    <a href="#game">小游戏</a>
     <a href="#craft">工程细节</a>
   </div>
 </nav>
@@ -225,8 +226,29 @@
   </div>
 </section>
 
+<section id="game" class="wrap">
+  <div class="sec-head"><span class="num">04</span><h2>让它自己写一个游戏</h2></div>
+  <p class="sec-lead">
+    同一个工作台，换一个需求：产出的不是一张图，而是一个<strong>能直接运行的游戏</strong>。
+    单文件 HTML、零外部依赖、不到 40 KB，鼠标和键盘都能玩。
+  </p>
+  <figure>
+    <a href="images/game-minesweeper.png" target="_blank"><img src="images/game-minesweeper.png" alt="扫雷游戏界面" loading="lazy"></a>
+    <figcaption>
+      <b>扫雷</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
+      方向键移动 + <code>Enter</code> 翻开 + <code>F</code> 插旗 + <code>R</code> 重开。生成后没有人工改过代码。
+    </figcaption>
+  </figure>
+  <div style="margin-top:20px">
+    <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">在线玩一局 →</a>
+  </div>
+  <div class="note">
+    <b>这条比截图有说服力得多。</b>能生成图文的 agent 不少，能把需求落成一个别人点开就能玩的东西、并且自己保证没有外部依赖的，少一大截。
+  </div>
+</section>
+
 <section id="craft" class="wrap">
-  <div class="sec-head"><span class="num">04</span><h2>工程细节</h2></div>
+  <div class="sec-head"><span class="num">05</span><h2>工程细节</h2></div>
   <p class="sec-lead">界面之外，真正花时间的是这些地方。</p>
   <ul class="craft">
     <li><b>多 agent 接力的原子性</b><span>租约 + fencing + 步骤幂等，配合 resume / continue：接力断了能续上，且不会有两个进程同时写同一步。</span></li>
