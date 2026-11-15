@@ -78,6 +78,12 @@
   .big-link:hover{opacity:.9}
   .fineprint{margin-top:18px; font-size:12.5px; line-height:1.8; color:#8a938c}
 
+  .flow{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:22px 0 6px; padding:16px 18px; background:var(--card); border:1px solid var(--line); border-radius:14px}
+  .flow .step{font-size:13px; padding:6px 12px; border-radius:999px; background:var(--green-soft); color:var(--green); font-weight:500; white-space:nowrap}
+  .flow .step.qwen{background:#eef2fb; color:#2f4a8a}
+  .flow .step.ds{background:#eaf3ee; color:var(--green)}
+  .flow .arrow{color:#b9c1bb; font-size:13px}
+
   @media (max-width:520px){
     header.hero{padding:44px 0 34px}
     section{padding:38px 0}
@@ -236,10 +242,21 @@
     手机 QQ 里发一句话 → 本机把代码写完、打包成单个 HTML、回传聊天窗口 → 点开就能玩。
     单文件、零外部依赖、不到 40 KB，鼠标键盘都支持。
   </p>
+  <div class="flow">
+    <span class="step">手机 QQ 发出需求</span><span class="arrow">→</span>
+    <span class="step qwen">千问 · 定计划</span><span class="arrow">→</span>
+    <span class="step ds">DeepSeek · 写代码</span><span class="arrow">→</span>
+    <span class="step qwen">千问 · 复审</span><span class="arrow">→</span>
+    <span class="step">本机打包 · 回传 QQ</span>
+  </div>
+  <p class="sec-lead" style="margin:14px 0 24px">
+    这个游戏不是“一个模型一口气写完”的：<strong>千问负责拆计划和复审，DeepSeek 负责把代码写出来</strong>。
+    一个出结构、一个出实现，再由前者挑毛病 —— 自己写完自己验，最容易漏的就是“能跑但不对”。
+  </p>
   <figure>
     <a href="images/game-minesweeper.png" target="_blank"><img src="images/game-minesweeper.png" alt="扫雷游戏界面" loading="lazy"></a>
     <figcaption>
-      <b>扫雷 · 由 PA 自主生成</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
+      <b>扫雷 · 千问定计划 + DeepSeek 写代码 + 千问复审</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
       方向键移动 + <code>Enter</code> 翻开 + <code>F</code> 插旗 + <code>R</code> 重开。需求从 QQ 发出，成品从 QQ 回传。
     </figcaption>
   </figure>
@@ -247,7 +264,7 @@
     <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">在线玩一局 →</a>
   </div>
   <div class="note">
-    <b>QQ 通道在这里不是“发通知的口”，而是一条完整的交付链路。</b>需求从手机进、代码在本机出、成品回到聊天窗口 ——
+    <b>一条通道 + 两个模型 = 一条完整的交付链路。</b>需求从手机进、计划由千问拆、代码由 DeepSeek 写、复审回到千问，成品再回到聊天窗口 ——
     中间不需要我坐到电脑前。能生成图文的 agent 不少；能从一句话拿到一个别人点开就能玩的程序、产物还自己保证零外部依赖的，少得多。
   </div>
 </section>
