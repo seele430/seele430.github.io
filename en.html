@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://seele430.github.io/en.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Unimere · Personal Workspace</title>
+<meta name="description" content="Screens and run records from Unimere: a web workspace, platform console, QQ-generated examples, and a playable Minesweeper game.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unimere · Personal Workspace">
+<meta property="og:description" content="Screens and run records from Unimere, including the web app, QQ channel, platform console, and generated artifacts.">
+<meta property="og:url" content="https://seele430.github.io/en.html">
+<meta property="og:image" content="https://seele430.github.io/images/unimere-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<style>
+  :root{
+    --ink:#14201b; --muted:#52645f; --line:#dbe6e2;
+    --paper:#f3f8f7; --card:#fbfdfd; --green:#123f46; --green-soft:#e3f0ed; --pink:#5db9b4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--green); text-decoration:none; border-bottom:1px solid rgba(18,63,70,.25)}
+  a:hover{border-bottom-color:var(--green)}
+  a:focus-visible{outline:3px solid var(--pink); outline-offset:4px; border-radius:4px}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px}
+
+  /* ---------- top nav ---------- */
+  .nav{position:sticky; top:0; z-index:9; background:rgba(243,248,247,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex; align-items:center; gap:14px; height:54px; overflow-x:auto; scrollbar-width:none}
+  .nav .wrap::-webkit-scrollbar{display:none}
+  .brand{font-weight:700; letter-spacing:.02em; white-space:nowrap}
+  .brand span{color:var(--pink)}
+  .nav a{display:flex; align-items:center; min-height:44px; font-size:13.5px; color:var(--muted); border:0; white-space:nowrap}
+  .nav a:hover{color:var(--green)}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:64px 0 44px}
+  .eyebrow{font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--green); font-weight:600}
+  h1{font-size:clamp(30px,5.4vw,46px); line-height:1.2; margin:.5rem 0 0; letter-spacing:-.01em}
+  .lede{font-size:clamp(15px,2.2vw,18px); color:var(--muted); max-width:640px; margin:16px 0 0}
+  .lede strong{color:var(--ink); font-weight:600}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:24px}
+  .chip{font-size:12.5px; padding:5px 11px; border-radius:999px; background:var(--green-soft); color:var(--green); white-space:nowrap}
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:34px}
+  .fact{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px}
+  .fact b{display:block; font-size:15px; margin-bottom:2px}
+  .fact span{font-size:13px; color:var(--muted)}
+  .stats{margin-top:18px; font-size:13px; color:var(--muted)}
+  .stats b{color:var(--ink); font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding:46px 0; border-top:1px solid var(--line)}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:6px}
+  .num{font-size:13px; font-weight:700; color:var(--pink); letter-spacing:.1em}
+  h2{font-size:clamp(21px,3.4vw,27px); margin:0; letter-spacing:-.01em}
+  .sec-lead{color:var(--muted); font-size:14.5px; margin:8px 0 26px; max-width:660px}
+
+  .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .grid.three{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  figure{margin:0; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,32,27,.04)}
+  figure img{display:block; width:100%; height:auto}
+  figcaption{padding:12px 15px 14px; font-size:13px; color:var(--muted); line-height:1.65}
+  figcaption b{color:var(--ink); font-weight:600; display:block; margin-bottom:2px; font-size:13.5px}
+
+  .note{margin-top:22px; background:var(--green-soft); border-left:3px solid var(--green); border-radius:0 12px 12px 0; padding:16px 18px; font-size:13.5px; color:#2c3d34}
+  .note b{color:var(--green)}
+
+  ul.craft{list-style:none; padding:0; margin:0; display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  ul.craft li{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px}
+  ul.craft b{display:block; font-size:14.5px; margin-bottom:4px}
+  ul.craft span{font-size:13.5px; color:var(--muted)}
+
+  footer{padding:40px 0 70px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted)}
+  footer .row{display:flex; flex-wrap:wrap; gap:18px; align-items:center}
+  .big-link{display:inline-block; background:var(--green); color:var(--paper); border:0; border-radius:10px; padding:11px 18px; font-size:14px; font-weight:600}
+  .big-link:hover{opacity:.9}
+  .fineprint{margin-top:18px; font-size:12.5px; line-height:1.8; color:var(--muted)}
+
+  .flow{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:22px 0 6px; padding:16px 18px; background:var(--card); border:1px solid var(--line); border-radius:14px}
+  .flow .step{font-size:13px; padding:6px 12px; border-radius:999px; background:var(--green-soft); color:var(--green); font-weight:500; white-space:nowrap}
+  .flow .step.qwen{background:#eef2fb; color:#2f4a8a}
+  .flow .step.ds{background:#eaf3ee; color:var(--green)}
+  .flow .arrow{color:#b9c1bb; font-size:13px}
+
+  @media (max-width:520px){
+    header.hero{padding:44px 20px 34px}
+    section{padding:38px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">Unimere <span>一泓</span></div>
+    <a href="#desktop">Desktop</a>
+    <a href="#platform">Console</a>
+    <a href="#qq">QQ channel</a>
+    <a href="#game">Minesweeper</a>
+    <a href="#craft">Implementation</a>
+    <a href="index.html" hreflang="zh-CN" lang="zh-CN" aria-label="切换到中文">中文</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="eyebrow">Unimere · Personal workspace</div>
+  <h1>Many flows. One clear space.</h1>
+  <p class="lede">
+    Unimere is a personal workspace I am building. The web app covers chat, reminders, jobs, and artifacts.
+    An official QQ bot sends requests to my machine and returns images, documents, or HTML results.
+    The interface uses React, with FastAPI and SQLite on the backend.
+  </p>
+  <div class="chips">
+    <span class="chip">Python 3.12</span>
+    <span class="chip">FastAPI</span>
+    <span class="chip">SQLite</span>
+    <span class="chip">APScheduler</span>
+    <span class="chip">React 19 · TypeScript · Vite</span>
+    <span class="chip">DeepSeek Chat</span>
+    <span class="chip">Official QQ bot (C2C)</span>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><b>Local storage</b><span>Single-user, single-machine setup; jobs, records, and artifacts stay on the local machine by default</span></div>
+    <div class="fact"><b>QQ channel</b><span>Send a request in chat and receive a poster, guide, or HTML file from the local service</span></div>
+    <div class="fact"><b>Run records</b><span>Inspect queues, nodes, sandboxes, and terminal execution states in the console</span></div>
+    <div class="fact"><b>Source and screenshots</b><span>The code is on GitHub, and the screenshots come from actual runs</span></div>
+  </div>
+</header>
+
+<section id="desktop" class="wrap">
+  <div class="sec-head"><span class="num">01</span><h2>Desktop workspace</h2></div>
+  <p class="sec-lead">Chat, reminders, jobs, memories, and usage each have their own page. These are the main screens.</p>
+  <div class="grid">
+    <figure>
+      <a href="images/chat.webp" target="_blank"><img src="images/chat.webp" alt="Chat page" loading="lazy"></a>
+      <figcaption><b>Chat</b>Entering “Remind me to stretch in 10 minutes” creates a reminder and returns its ID, so it can be changed or cancelled later.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/reminders.webp" target="_blank"><img src="images/reminders.webp" alt="Reminders page" loading="lazy"></a>
+      <figcaption><b>Reminders</b>Each reminder is stored separately with pending and delivered states, independent of a particular chat message.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/tasks.webp" target="_blank"><img src="images/tasks.webp" alt="Job center" loading="lazy"></a>
+      <figcaption><b>Job center</b>Manage RSS and webpage-change monitors, then inspect run records and delivery results.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/memory.webp" target="_blank"><img src="images/memory.webp" alt="Memory and knowledge base" loading="lazy"></a>
+      <figcaption><b>Memory</b>Fact cards persist across sessions with a key, content, source, and creation time. They can be searched, edited, and deleted.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/quota.webp" target="_blank"><img src="images/quota.webp" alt="Usage page" loading="lazy"></a>
+      <figcaption><b>Usage</b>Track request counts and model budgets. Pending requests are marked separately, and local records are not the provider's bill.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="platform" class="wrap">
+  <div class="sec-head"><span class="num">02</span><h2>Platform console</h2></div>
+  <p class="sec-lead">
+    The console tracks queues, nodes, sandboxes, and executions. Request acceptance, terminal states, and capacity changes
+    are counted separately, so a 202 response is not mistaken for a successful run.
+  </p>
+  <div class="grid">
+    <figure>
+      <a href="images/pf-overview.webp" target="_blank"><img src="images/pf-overview.webp" alt="Platform overview" loading="lazy"></a>
+      <figcaption><b>Overview</b>Check the current queue length, execution success rate, and node status.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/pf-nodes.webp" target="_blank"><img src="images/pf-nodes.webp" alt="Node management" loading="lazy"></a>
+      <figcaption><b>Nodes</b>Only nodes in the <code>accepting</code> state count towards actual capacity. Cordon, drain, and expired leases are marked separately.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/pf-sandbox.webp" target="_blank"><img src="images/pf-sandbox.webp" alt="Sandbox list" loading="lazy"></a>
+      <figcaption><b>Sandboxes</b>Ephemeral workspaces have a TTL and are reclaimed on expiry. The list records creation time, owning node, and expiry time.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/pf-exec.webp" target="_blank"><img src="images/pf-exec.webp" alt="Execution details" loading="lazy"></a>
+      <figcaption><b>Executions</b>Cancelled runs are excluded from the success-rate denominator. p50 and p99 show “insufficient samples” when there is not enough data.</figcaption>
+    </figure>
+  </div>
+  <div class="note"><code>202</code> means accepted; <code>hold</code> does not mean scaled; available capacity is calculated from valid leases.</div>
+</section>
+
+<section id="qq" class="wrap">
+  <div class="sec-head"><span class="num">03</span><h2>QQ remote channel</h2></div>
+  <p class="sec-lead">Send a request in QQ and the local service returns the result. These screenshots are from actual runs.</p>
+  <p class="sec-lead" style="margin-top:-8px">
+    Early versions used NapCat with a secondary account, whose login session often expired. The current version uses
+    an official QQ Open Platform bot over an outbound persistent connection, so no public IP address is needed.
+  </p>
+  <div class="grid">
+    <figure>
+      <a href="images/qq-gdp.webp" target="_blank"><img src="images/qq-gdp.webp" alt="GDP composition poster" loading="lazy"></a>
+      <figcaption><b>“Share of industries in 2025 GDP”</b>A request for a statistical chart returns a GDP composition poster.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/qq-salary.webp" target="_blank"><img src="images/qq-salary.webp" alt="Average annual salary poster" loading="lazy"></a>
+      <figcaption><b>“Average annual salary in Beijing over three years”</b>The result shows the three-year trend and growth rate, with sources and methodology notes.</figcaption>
+    </figure>
+    <figure>
+      <a href="images/qq-weather.webp" target="_blank"><img src="images/qq-weather.webp" alt="Weather poster" loading="lazy"></a>
+      <figcaption><b>“Shanghai weather for the past three days as a poster”</b>A weather request returns a Shanghai weather poster.</figcaption>
+    </figure>
+  </div>
+
+  <div class="grid" style="margin-top:16px">
+    <figure style="grid-column:1/-1">
+      <a href="images/qq-travel-chat.webp" target="_blank"><img src="images/qq-travel-chat.webp" alt="Long-form travel guide generation" loading="lazy"></a>
+      <figcaption><b>“Create a three-day Shanghai itinerary with images”</b>The bot first replies with an estimate, then sends illustrated guides for Day 1 through Day 3. Failed steps can be retried.</figcaption>
+    </figure>
+  </div>
+
+  <div class="grid three" style="margin-top:16px">
+    <figure>
+      <a href="images/qq-day1.webp" target="_blank"><img src="images/qq-day1.webp" alt="Day 1 long-form guide" loading="lazy"></a>
+      <figcaption><b>Day 1</b>The Bund · Nanjing Road · Yuyuan Garden</figcaption>
+    </figure>
+    <figure>
+      <a href="images/qq-day2.webp" target="_blank"><img src="images/qq-day2.webp" alt="Day 2 long-form guide" loading="lazy"></a>
+      <figcaption><b>Day 2</b>Wukang Road · Tianzifang · Xintiandi</figcaption>
+    </figure>
+    <figure>
+      <a href="images/qq-day3.webp" target="_blank"><img src="images/qq-day3.webp" alt="Day 3 long-form guide" loading="lazy"></a>
+      <figcaption><b>Day 3</b>Lujiazui · Riverside · Return trip</figcaption>
+    </figure>
+  </div>
+  <div class="note">Posters retain their sources and verification status. Figures that were not checked online are marked separately.</div>
+  <p style="margin-top:20px;font-size:14px;color:var(--muted)">The same channel can generate HTML as well as images. The Minesweeper game below was one such test.</p>
+</section>
+
+<section id="game" class="wrap">
+  <div class="sec-head"><span class="num">04</span><h2>Minesweeper generated from QQ</h2><span class="chip">Requested from mobile QQ</span></div>
+  <p class="sec-lead">This test started in QQ and returned a single HTML file. It is about 32 KB, runs directly in a browser, and has no dependencies to install.</p>
+  <div class="flow">
+    <span class="step">Request from mobile QQ</span><span class="arrow">→</span>
+    <span class="step qwen">Qwen · Plan</span><span class="arrow">→</span>
+    <span class="step ds">DeepSeek · Code</span><span class="arrow">→</span>
+    <span class="step qwen">Qwen · Review</span><span class="arrow">→</span>
+    <span class="step">Local packaging · QQ reply</span>
+  </div>
+  <p class="sec-lead" style="margin:14px 0 24px">Qwen planned and reviewed the implementation, while DeepSeek wrote the code. The flow above is the actual sequence used for this run.</p>
+  <figure>
+    <a href="images/game-minesweeper.webp" target="_blank"><img src="images/game-minesweeper.webp" alt="Minesweeper game interface" loading="lazy"></a>
+    <figcaption>
+      <b>Minesweeper · Planned and reviewed by Qwen, written by DeepSeek</b>Three difficulty levels (starting at 9×9 with 10 mines), a timer, and best scores.
+      Left-click to reveal, right-click to flag, and double-click a number to chord. Use arrow keys to move, <code>Enter</code> to reveal,
+      <code>F</code> to flag, and <code>R</code> to restart. The request and the finished file both went through QQ.
+    </figcaption>
+  </figure>
+  <div style="margin-top:20px">
+    <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">Play Minesweeper →</a>
+  </div>
+  <div class="note">Code generation and review call external models; file packaging and QQ delivery run locally. The playable version is kept here so the result can be checked directly.</div>
+</section>
+
+<section id="craft" class="wrap">
+  <div class="sec-head"><span class="num">05</span><h2>Implementation notes</h2></div>
+  <p class="sec-lead">A few implementation details related to reliability.</p>
+  <ul class="craft">
+    <li><b>Multi-agent handoffs</b><span>Leases, fencing, and idempotent steps coordinate handoffs. Runs can resume or continue after interruption without two processes writing the same step.</span></li>
+    <li><b>Test runner</b><span>SQLite and socket guards sit outside the tests. A test fails if it touches the real database or the network.</span></li>
+    <li><b>Metric definitions</b><span>The meanings of 202, hold, and available capacity are defined in code and comments, with the frontend and backend using the same rules.</span></li>
+    <li><b>Artifact records</b><span>Artifacts include SHA-256 hashes and previews, with diffs between two versions. Deletion requires a dry run followed by confirmation.</span></li>
+  </ul>
+</section>
+
+<footer class="wrap">
+  <div class="row">
+    <a class="big-link" href="https://github.com/seele430/unimere" target="_blank" rel="noopener">View the source on GitHub →</a>
+    <span>Open to AI Agent / full-stack roles · <a href="mailto:2790017495@qq.com">2790017495@qq.com</a></span>
+    <span>Screenshots come from actual local runs. Some were recorded before the rebrand in November 2026.</span>
+  </div>
+  <div class="row" style="margin-top:12px">
+    <span style="font-size:12.5px;color:var(--muted)">Last modified: <span id="built">—</span></span>
+  </div>
+  <p class="fineprint">
+    Other projects: <a href="https://github.com/seele430/DeepResearch" target="_blank" rel="noopener">DeepResearch</a> (a research tool with two ReAct backends) and
+    <a href="https://github.com/seele430/ResearchSwarm" target="_blank" rel="noopener">ResearchSwarm</a> (multi-agent research with CLI, web, and desktop interfaces).
+  </p>
+</footer>
+
+<script>
+  // Show the server-side modification time to make stale cached versions easier to spot.
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('built');
+    if (!el) return;
+    var d = new Date(document.lastModified);
+    if (isNaN(d.getTime())) { el.textContent = 'Unknown'; return; }
+    var s = d.toLocaleString('en-GB', { timeZone: 'Asia/Shanghai', hour12: false });
+    el.textContent = s.slice(0, 16);
+  });
+</script>
+
+</body>
+</html>
