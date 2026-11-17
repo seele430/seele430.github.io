@@ -7,7 +7,7 @@
 <meta name="description" content="个人项目记录：本地 AI 工作台的网页端、平台控制台和 QQ 远程通道，附真实运行截图与扫雷试玩。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Personal Agent · 个人 AI 工作台">
-<meta property="og:description" content="React、FastAPI 和 SQLite 做的本地工作台，也可以通过手机 QQ 生成海报、攻略或 HTML 小游戏。">
+<meta property="og:description" content="React、FastAPI 和 SQLite 做的本地工作台；手机 QQ 发需求，本机出海报、攻略或 HTML 小游戏。">
 <meta property="og:url" content="https://seele430.github.io/">
 <meta property="og:image" content="https://seele430.github.io/images/chat.png">
 <meta property="og:image:width" content="1634">
@@ -49,6 +49,8 @@
   .fact{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px}
   .fact b{display:block; font-size:15px; margin-bottom:2px}
   .fact span{font-size:13px; color:var(--muted)}
+  .stats{margin-top:18px; font-size:13px; color:var(--muted)}
+  .stats b{color:var(--ink); font-weight:600}
 
   /* ---------- sections ---------- */
   section{padding:46px 0; border-top:1px solid var(--line)}
@@ -107,9 +109,9 @@
   <div class="eyebrow">Personal Agent · Project Notes</div>
   <h1>一个跑在自己电脑上的 AI 工作台</h1>
   <p class="lede">
-    这是我做的一个本地工作台：React 做界面，FastAPI 和 SQLite 负责后端与存储。
-    除了网页端对话，也可以通过手机 QQ 触发本机任务，生成海报、攻略或一个 HTML 小游戏。
-    项目目前按<strong>单用户、单机使用</strong>设计。
+    这台电脑上跑着一个我自己用的 AI 工作台。React 写界面，FastAPI 和 SQLite 管后端和存储，
+    数据和记录都留在这台机器上。出门的时候用手机 QQ 发一句话，回来收结果——海报、攻略，
+    或者一个点开就能玩的 HTML 小游戏。
   </p>
   <div class="chips">
     <span class="chip">Python 3.12</span>
@@ -118,8 +120,9 @@
     <span class="chip">APScheduler</span>
     <span class="chip">React 19 · TypeScript · Vite</span>
     <span class="chip">DeepSeek Chat</span>
-    <span class="chip">OneBot / QQ</span>
+    <span class="chip">QQ 官方机器人（C2C）</span>
   </div>
+  <p class="stats"><b>4.6 万行代码</b> · 460+ 次提交 · 1300+ 单元测试 · 17 张截图都来自本机实际运行</p>
 
   <div class="facts">
     <div class="fact"><b>本地运行</b><span>单用户、单机使用，任务和记录保存在本机；手机端只读查看</span></div>
@@ -145,7 +148,7 @@
     </figure>
     <figure>
       <a href="images/tasks.png" target="_blank"><img src="images/tasks.png" alt="任务中心" loading="lazy"></a>
-      <figcaption><b>任务中心</b>这里放 RSS 订阅监控。不同角色能创建的任务和接收结果的方式不同。</figcaption>
+      <figcaption><b>任务中心</b>RSS 和网页变更监控。不同角色能建的任务、接收结果的方式不一样。</figcaption>
     </figure>
     <figure>
       <a href="images/memory.png" target="_blank"><img src="images/memory.png" alt="记忆 / 知识库" loading="lazy"></a>
@@ -161,7 +164,8 @@
 <section id="platform" class="wrap">
   <div class="sec-head"><span class="num">02</span><h2>平台控制台</h2></div>
   <p class="sec-lead">
-    控制台用于查看执行队列、节点、沙箱和成功率。实现时花了不少时间统一指标口径，例如哪些状态计入可用容量、取消是否进入成功率分母。
+    这块花的时间比界面多。光是指标口径就改了几轮：哪些状态算进可用容量、取消要不要进成功率分母、
+    样本不够时显示什么。界面上每个数字都得能解释。
   </p>
   <div class="grid">
     <figure>
@@ -189,7 +193,11 @@
 <section id="qq" class="wrap">
   <div class="sec-head"><span class="num">03</span><h2>QQ 远程通道</h2></div>
   <p class="sec-lead">
-    这是我最常用的一条链路：在 QQ 里发需求，本机完成后把结果发回来。下面是几次实际运行留下的截图。
+    这条线我用得最多：在 QQ 里发需求，本机做完把结果发回来。下面是几次实际运行留下的截图。
+  </p>
+  <p class="sec-lead" style="margin-top:-8px">
+    一开始是用 NapCat 接小号，隔三差五被腾讯踢下线，早上起来发现机器人又掉了。后来换成 QQ 开放平台的官方机器人，
+    出站长连，不用公网 IP，也不用一直盯着它掉没掉线。
   </p>
   <div class="grid">
     <figure>
@@ -238,7 +246,7 @@
 <section id="game" class="wrap">
   <div class="sec-head"><span class="num">04</span><h2>从 QQ 生成一个扫雷游戏</h2><span class="chip">来自手机 QQ</span></div>
   <p class="sec-lead">
-    有一次我直接在 QQ 里让它做一个小游戏。最后返回的是单个 HTML 文件，打开就能玩，不到 40 KB，不需要安装依赖。
+    有一次我直接在 QQ 里让它做一个小游戏。最后返回的是单个 HTML 文件，打开就能玩，32 KB，不需要安装依赖。
   </p>
   <div class="flow">
     <span class="step">手机 QQ 发出需求</span><span class="arrow">→</span>
@@ -267,7 +275,7 @@
 
 <section id="craft" class="wrap">
   <div class="sec-head"><span class="num">05</span><h2>实现记录</h2></div>
-  <p class="sec-lead">下面四项是调试时比较费力、也值得记录的部分。</p>
+  <p class="sec-lead">这几处是调试时最费劲的。</p>
   <ul class="craft">
     <li><b>多 agent 接力</b><span>用租约、fencing 和步骤幂等处理任务接力；中断后可以 resume / continue，避免两个进程同时写同一步。</span></li>
     <li><b>测试运行器</b><span>在测试外加 SQLite 和 socket 守卫，测试如果访问真实数据库或网络就直接失败。</span></li>
@@ -279,6 +287,7 @@
 <footer class="wrap">
   <div class="row">
     <a class="big-link" href="https://github.com/seele430/Personal-Agent" target="_blank" rel="noopener">在 GitHub 看源码 →</a>
+    <span>求职方向：AI Agent / 全栈 · <a href="mailto:2790017495@qq.com">2790017495@qq.com</a></span>
     <span>截图均为本机真实运行界面，2026 年 11 月。</span>
   </div>
   <div class="row" style="margin-top:12px">
