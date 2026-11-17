@@ -6,19 +6,19 @@
 <link rel="canonical" href="https://seele430.github.io/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>Personal Agent · 个人 AI 工作台</title>
-<meta name="description" content="个人项目记录：本地 AI 工作台的网页端、平台控制台和 QQ 远程通道，附真实运行截图与扫雷试玩。">
+<title>Unimere｜一泓 · 个人智能工作台</title>
+<meta name="description" content="Unimere（一泓）：连接对话、任务、产物与消息的个人智能工作台，支持网页、QQ、提醒与定时任务。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Personal Agent · 个人 AI 工作台">
-<meta property="og:description" content="React、FastAPI 和 SQLite 做的本地工作台；手机 QQ 发需求，本机出海报、攻略或 HTML 小游戏。">
+<meta property="og:title" content="Unimere｜一泓 · 个人智能工作台">
+<meta property="og:description" content="万流入泓，诸事归一。网页、QQ、平台控制台与真实运行产物展示。">
 <meta property="og:url" content="https://seele430.github.io/">
-<meta property="og:image" content="https://seele430.github.io/images/chat.png">
-<meta property="og:image:width" content="1634">
-<meta property="og:image:height" content="1067">
+<meta property="og:image" content="https://seele430.github.io/images/unimere-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <style>
   :root{
-    --ink:#14201b; --muted:#5f6b64; --line:#e5e3db;
-    --paper:#f6f5f1; --card:#fff; --green:#0f3d2e; --green-soft:#e9efe9; --pink:#d9537a;
+    --ink:#14201b; --muted:#52645f; --line:#dbe6e2;
+    --paper:#f3f8f7; --card:#fbfdfd; --green:#123f46; --green-soft:#e3f0ed; --pink:#5db9b4;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -27,17 +27,18 @@
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     line-height:1.75; -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--green); text-decoration:none; border-bottom:1px solid rgba(15,61,46,.25)}
+  a{color:var(--green); text-decoration:none; border-bottom:1px solid rgba(18,63,70,.25)}
   a:hover{border-bottom-color:var(--green)}
+  a:focus-visible{outline:3px solid var(--pink); outline-offset:4px; border-radius:4px}
   .wrap{max-width:900px; margin:0 auto; padding:0 20px}
 
   /* ---------- top nav ---------- */
-  .nav{position:sticky; top:0; z-index:9; background:rgba(246,245,241,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .nav{position:sticky; top:0; z-index:9; background:rgba(243,248,247,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex; align-items:center; gap:14px; height:54px; overflow-x:auto; scrollbar-width:none}
   .nav .wrap::-webkit-scrollbar{display:none}
   .brand{font-weight:700; letter-spacing:.02em; white-space:nowrap}
   .brand span{color:var(--pink)}
-  .nav a{font-size:13.5px; color:var(--muted); border:0; white-space:nowrap}
+  .nav a{display:flex; align-items:center; min-height:44px; font-size:13.5px; color:var(--muted); border:0; white-space:nowrap}
   .nav a:hover{color:var(--green)}
 
   /* ---------- hero ---------- */
@@ -79,9 +80,9 @@
 
   footer{padding:40px 0 70px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted)}
   footer .row{display:flex; flex-wrap:wrap; gap:18px; align-items:center}
-  .big-link{display:inline-block; background:var(--green); color:#fff; border:0; border-radius:10px; padding:11px 18px; font-size:14px; font-weight:600}
+  .big-link{display:inline-block; background:var(--green); color:var(--paper); border:0; border-radius:10px; padding:11px 18px; font-size:14px; font-weight:600}
   .big-link:hover{opacity:.9}
-  .fineprint{margin-top:18px; font-size:12.5px; line-height:1.8; color:#8a938c}
+  .fineprint{margin-top:18px; font-size:12.5px; line-height:1.8; color:var(--muted)}
 
   .flow{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:22px 0 6px; padding:16px 18px; background:var(--card); border:1px solid var(--line); border-radius:14px}
   .flow .step{font-size:13px; padding:6px 12px; border-radius:999px; background:var(--green-soft); color:var(--green); font-weight:500; white-space:nowrap}
@@ -93,13 +94,16 @@
     header.hero{padding:44px 20px 34px}
     section{padding:38px 0}
   }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="wrap">
-    <div class="brand">Personal <span>Agent</span></div>
+    <div class="brand">Unimere <span>一泓</span></div>
     <a href="#desktop">桌面工作台</a>
     <a href="#platform">平台控制台</a>
     <a href="#qq">QQ 远程通道</a>
@@ -109,10 +113,10 @@
 </nav>
 
 <header class="hero wrap">
-  <div class="eyebrow">Personal Agent · Project Notes</div>
-  <h1>一个跑在自己电脑上的 AI 工作台</h1>
+  <div class="eyebrow">Many flows. One clear space.</div>
+  <h1>万流入泓，诸事归一。</h1>
   <p class="lede">
-    这台电脑上跑着一个我自己用的 AI 工作台。React 写界面，FastAPI 和 SQLite 管后端和存储，
+    Unimere（一泓）是一个连接对话、任务、产物与消息的个人智能工作台。React 写界面，FastAPI 和 SQLite 管后端和存储，
     数据和记录都留在这台机器上。出门的时候用手机 QQ 发一句话，回来收结果——海报、攻略，
     或者一个点开就能玩的 HTML 小游戏。
   </p>
@@ -289,12 +293,12 @@
 
 <footer class="wrap">
   <div class="row">
-    <a class="big-link" href="https://github.com/seele430/Personal-Agent" target="_blank" rel="noopener">在 GitHub 看源码 →</a>
+    <a class="big-link" href="https://github.com/seele430/unimere" target="_blank" rel="noopener">在 GitHub 看源码 →</a>
     <span>求职方向：AI Agent / 全栈 · <a href="mailto:2790017495@qq.com">2790017495@qq.com</a></span>
-    <span>截图均为本机真实运行界面，2026 年 11 月。</span>
+    <span>截图均为本机真实运行界面；部分界面记录于品牌更名前，2026 年 11 月。</span>
   </div>
   <div class="row" style="margin-top:12px">
-    <span style="font-size:12.5px;color:#9aa39d">页面更新于 <span id="built">—</span></span>
+    <span style="font-size:12.5px;color:var(--muted)">页面更新于 <span id="built">—</span></span>
   </div>
   <p class="fineprint">
     另外两个项目：DeepResearch（手写 ReAct 控制流 + 原生 Function Calling 的多步调研 agent）、
