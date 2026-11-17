@@ -6,11 +6,11 @@
 <link rel="canonical" href="https://seele430.github.io/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>Unimere｜一泓 · 个人智能工作台</title>
-<meta name="description" content="Unimere（一泓）：连接对话、任务、产物与消息的个人智能工作台，支持网页、QQ、提醒与定时任务。">
+<title>Unimere｜一泓 · 个人工作台</title>
+<meta name="description" content="Unimere（一泓）的界面与运行记录：网页工作台、平台控制台、QQ 生成案例和扫雷试玩。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Unimere｜一泓 · 个人智能工作台">
-<meta property="og:description" content="万流入泓，诸事归一。网页、QQ、平台控制台与真实运行产物展示。">
+<meta property="og:title" content="Unimere｜一泓 · 个人工作台">
+<meta property="og:description" content="Unimere 的界面与运行记录，包括网页、QQ、平台控制台和生成产物。">
 <meta property="og:url" content="https://seele430.github.io/">
 <meta property="og:image" content="https://seele430.github.io/images/unimere-card.png">
 <meta property="og:image:width" content="1200">
@@ -116,9 +116,9 @@
   <div class="eyebrow">Many flows. One clear space.</div>
   <h1>万流入泓，诸事归一。</h1>
   <p class="lede">
-    Unimere（一泓）是一个连接对话、任务、产物与消息的个人智能工作台。React 写界面，FastAPI 和 SQLite 管后端和存储，
-    数据和记录都留在这台机器上。出门的时候用手机 QQ 发一句话，回来收结果——海报、攻略，
-    或者一个点开就能玩的 HTML 小游戏。
+    Unimere（一泓）是我正在做的个人工作台。网页端用于对话、提醒、任务和产物管理；
+    QQ 官方机器人把需求发到本机，再把图片、文档或 HTML 结果发回来。
+    界面使用 React，后端和存储使用 FastAPI 与 SQLite。
   </p>
   <div class="chips">
     <span class="chip">Python 3.12</span>
@@ -129,21 +129,18 @@
     <span class="chip">DeepSeek Chat</span>
     <span class="chip">QQ 官方机器人（C2C）</span>
   </div>
-  <p class="stats"><b>4.6 万行代码</b> · 460+ 次提交 · 1300+ 单元测试 · 17 张截图都来自本机实际运行</p>
 
   <div class="facts">
-    <div class="fact"><b>本地运行</b><span>单用户、单机使用，任务和记录保存在本机；手机端只读查看</span></div>
-    <div class="fact"><b>QQ 触发</b><span>在聊天里发需求，本机执行后回传海报、攻略或 HTML</span></div>
-    <div class="fact"><b>运行状态</b><span>队列、节点、沙箱和成功率可以在控制台里查看</span></div>
-    <div class="fact"><b>代码开源</b><span>前端、后端和部署脚本放在 GitHub，截图来自实际运行</span></div>
+    <div class="fact"><b>本地存储</b><span>单用户、单机使用，任务、记录和产物默认保存在本机</span></div>
+    <div class="fact"><b>QQ 通道</b><span>在聊天里发需求，本机执行后回传海报、攻略或 HTML</span></div>
+    <div class="fact"><b>执行记录</b><span>在控制台查看队列、节点、沙箱和执行终态</span></div>
+    <div class="fact"><b>源码与截图</b><span>代码放在 GitHub，页面截图来自实际运行</span></div>
   </div>
 </header>
 
 <section id="desktop" class="wrap">
   <div class="sec-head"><span class="num">01</span><h2>桌面工作台</h2></div>
-  <p class="sec-lead">
-    网页端分为对话、提醒、任务、记忆和额度五块。我把常用操作做成独立页面，避免所有信息都堆在聊天记录里。
-  </p>
+  <p class="sec-lead">对话、提醒、任务、记忆和额度分别放在独立页面。下面是几张主要界面。</p>
   <div class="grid">
     <figure>
       <a href="images/chat.webp" target="_blank"><img src="images/chat.webp" alt="对话页" loading="lazy"></a>
@@ -155,7 +152,7 @@
     </figure>
     <figure>
       <a href="images/tasks.webp" target="_blank"><img src="images/tasks.webp" alt="任务中心" loading="lazy"></a>
-      <figcaption><b>任务中心</b>RSS 和网页变更监控。不同角色能建的任务、接收结果的方式不一样。</figcaption>
+      <figcaption><b>任务中心</b>管理 RSS 和网页变更监控，查看执行记录与投递结果。</figcaption>
     </figure>
     <figure>
       <a href="images/memory.webp" target="_blank"><img src="images/memory.webp" alt="记忆 / 知识库" loading="lazy"></a>
@@ -163,7 +160,7 @@
     </figure>
     <figure>
       <a href="images/quota.webp" target="_blank"><img src="images/quota.webp" alt="额度页" loading="lazy"></a>
-      <figcaption><b>额度</b>分别记录请求次数和 AI 预算。结算中的请求会单独标注，页面也注明本地记录不等于服务商账单。</figcaption>
+      <figcaption><b>额度</b>记录请求次数和模型预算。结算中的请求单独标注，本地记录不等于服务商账单。</figcaption>
     </figure>
   </div>
 </section>
@@ -171,8 +168,8 @@
 <section id="platform" class="wrap">
   <div class="sec-head"><span class="num">02</span><h2>平台控制台</h2></div>
   <p class="sec-lead">
-    这块花的时间比界面多。光是指标口径就改了几轮：哪些状态算进可用容量、取消要不要进成功率分母、
-    样本不够时显示什么。界面上每个数字都得能解释。
+    控制台用于检查队列、节点、沙箱和执行。请求接收、执行终态和容量变化分开统计，
+    避免把一个 202 响应当成任务已经成功。
   </p>
   <div class="grid">
     <figure>
@@ -193,18 +190,16 @@
     </figure>
   </div>
   <div class="note">
-    <b>当前约定：</b><code>202</code> 表示请求已接收；<code>hold</code> 不等于扩容；可用容量按有效租约计算。
+    <code>202</code> 表示请求已接收；<code>hold</code> 不等于扩容；可用容量按有效租约计算。
   </div>
 </section>
 
 <section id="qq" class="wrap">
   <div class="sec-head"><span class="num">03</span><h2>QQ 远程通道</h2></div>
-  <p class="sec-lead">
-    这条线我用得最多：在 QQ 里发需求，本机做完把结果发回来。下面是几次实际运行留下的截图。
-  </p>
+  <p class="sec-lead">在 QQ 里发需求，本机执行后把结果发回来。下面是几次运行留下的截图。</p>
   <p class="sec-lead" style="margin-top:-8px">
-    一开始是用 NapCat 接小号，隔三差五被腾讯踢下线，早上起来发现机器人又掉了。后来换成 QQ 开放平台的官方机器人，
-    出站长连，不用公网 IP，也不用一直盯着它掉没掉线。
+    早期版本用 NapCat 接小号，登录态经常失效。现在改用 QQ 开放平台的官方机器人，
+    通过出站长连接收发消息，不需要公网 IP。
   </p>
   <div class="grid">
     <figure>
@@ -242,19 +237,13 @@
       <figcaption><b>Day 3</b>陆家嘴 · 滨江 · 返程</figcaption>
     </figure>
   </div>
-  <div class="note">
-    海报底部保留了数据来源和核实状态。没有联网核实的数字会明确标注，方便之后回查。
-  </div>
-  <p style="margin-top:20px;font-size:14px;color:var(--muted)">
-    除了图片，这条通道也用来生成 HTML。下面的扫雷就是一次实际测试。
-  </p>
+  <div class="note">海报底部保留数据来源和核实状态；未联网核实的数字会单独标注。</div>
+  <p style="margin-top:20px;font-size:14px;color:var(--muted)">除了图片，这条通道也用来生成 HTML。下面的扫雷就是一次实际测试。</p>
 </section>
 
 <section id="game" class="wrap">
   <div class="sec-head"><span class="num">04</span><h2>从 QQ 生成一个扫雷游戏</h2><span class="chip">来自手机 QQ</span></div>
-  <p class="sec-lead">
-    有一次我直接在 QQ 里让它做一个小游戏。最后返回的是单个 HTML 文件，打开就能玩，32 KB，不需要安装依赖。
-  </p>
+  <p class="sec-lead">这次测试从 QQ 发出需求，返回单个 HTML 文件。文件约 32 KB，打开即可玩，不需要安装依赖。</p>
   <div class="flow">
     <span class="step">手机 QQ 发出需求</span><span class="arrow">→</span>
     <span class="step qwen">千问 · 定计划</span><span class="arrow">→</span>
@@ -262,9 +251,7 @@
     <span class="step qwen">千问 · 复审</span><span class="arrow">→</span>
     <span class="step">本机打包 · 回传 QQ</span>
   </div>
-  <p class="sec-lead" style="margin:14px 0 24px">
-    这次试了两个模型分工：<strong>千问负责前期计划和最后复审，DeepSeek 负责写代码</strong>。上面的流程对应这次实际生成过程。
-  </p>
+  <p class="sec-lead" style="margin:14px 0 24px">千问负责计划和复审，DeepSeek 负责写代码。上面的流程对应这次实际生成过程。</p>
   <figure>
     <a href="images/game-minesweeper.webp" target="_blank"><img src="images/game-minesweeper.webp" alt="扫雷游戏界面" loading="lazy"></a>
     <figcaption>
@@ -275,16 +262,14 @@
   <div style="margin-top:20px">
     <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">在线玩一局 →</a>
   </div>
-  <div class="note">
-    从 QQ 发需求，到代码生成、复审、打包和回传，整个过程在本机完成。这里保留在线试玩，方便直接检查生成结果。
-  </div>
+  <div class="note">代码生成和复审调用外部模型，文件整理与 QQ 回传由本机完成。这里保留在线试玩，方便直接检查结果。</div>
 </section>
 
 <section id="craft" class="wrap">
   <div class="sec-head"><span class="num">05</span><h2>实现记录</h2></div>
-  <p class="sec-lead">这几处是调试时最费劲的。</p>
+  <p class="sec-lead">几处与运行可靠性有关的实现。</p>
   <ul class="craft">
-    <li><b>多 agent 接力</b><span>用租约、fencing 和步骤幂等处理任务接力；中断后可以 resume / continue，避免两个进程同时写同一步。</span></li>
+    <li><b>多 Agent 接力</b><span>用租约、fencing 和步骤幂等处理任务接力；中断后可以 resume / continue，避免两个进程同时写同一步。</span></li>
     <li><b>测试运行器</b><span>在测试外加 SQLite 和 socket 守卫，测试如果访问真实数据库或网络就直接失败。</span></li>
     <li><b>指标定义</b><span>把 202、hold 和可用容量的定义写进代码和注释，前后端按同一套规则计算。</span></li>
     <li><b>产物记录</b><span>产物保存 SHA-256 和预览，两版可以做 diff；删除前先预演，再确认执行。</span></li>
@@ -295,14 +280,14 @@
   <div class="row">
     <a class="big-link" href="https://github.com/seele430/unimere" target="_blank" rel="noopener">在 GitHub 看源码 →</a>
     <span>求职方向：AI Agent / 全栈 · <a href="mailto:2790017495@qq.com">2790017495@qq.com</a></span>
-    <span>截图均为本机真实运行界面；部分界面记录于品牌更名前，2026 年 11 月。</span>
+    <span>截图来自本机实际运行；部分界面记录于 2026 年 11 月品牌更名前。</span>
   </div>
   <div class="row" style="margin-top:12px">
     <span style="font-size:12.5px;color:var(--muted)">页面更新于 <span id="built">—</span></span>
   </div>
   <p class="fineprint">
-    另外两个项目：DeepResearch（手写 ReAct 控制流 + 原生 Function Calling 的多步调研 agent）、
-    ResearchSwarm（Planner / Researcher / Analyst / Writer / Critic 五 agent 协作 + FastAPI/SSE 界面）。
+    另外两个项目：<a href="https://github.com/seele430/DeepResearch" target="_blank" rel="noopener">DeepResearch</a>（双后端 ReAct 调研工具）、
+    <a href="https://github.com/seele430/ResearchSwarm" target="_blank" rel="noopener">ResearchSwarm</a>（多 Agent 协作调研，带 CLI、Web 和桌面界面）。
   </p>
 </footer>
 
