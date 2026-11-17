@@ -34,12 +34,17 @@
 
   /* ---------- top nav ---------- */
   .nav{position:sticky; top:0; z-index:9; background:rgba(243,248,247,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex; align-items:center; gap:14px; height:54px; overflow-x:auto; scrollbar-width:none}
-  .nav .wrap::-webkit-scrollbar{display:none}
-  .brand{font-weight:700; letter-spacing:.02em; white-space:nowrap}
+  .nav .wrap{display:flex; align-items:center; gap:14px; height:54px}
+  .brand{font-weight:700; letter-spacing:.02em; white-space:nowrap; flex:0 0 auto}
   .brand span{color:var(--pink)}
+  .nav-links{display:flex; align-items:center; gap:14px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
   .nav a{display:flex; align-items:center; min-height:44px; font-size:13.5px; color:var(--muted); border:0; white-space:nowrap}
   .nav a:hover{color:var(--green)}
+  .lang-switch{display:flex; align-items:center; gap:2px; flex:0 0 auto; margin-left:auto; padding:2px; border:1px solid var(--line); border-radius:999px; background:var(--card)}
+  .nav .lang-switch a,.lang-switch .active{display:flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:0 10px; border:0; border-radius:999px; font-size:12.5px; font-weight:600; line-height:1; white-space:nowrap}
+  .lang-switch .active{background:var(--green); color:var(--paper)}
+  .nav .lang-switch a:hover{background:var(--green-soft); color:var(--green)}
 
   /* ---------- hero ---------- */
   header.hero{padding:64px 0 44px}
@@ -104,12 +109,17 @@
 <nav class="nav">
   <div class="wrap">
     <div class="brand">Unimere <span>一泓</span></div>
-    <a href="#desktop">桌面工作台</a>
-    <a href="#platform">平台控制台</a>
-    <a href="#qq">QQ 远程通道</a>
-    <a href="#game">小游戏</a>
-    <a href="#craft">实现记录</a>
-    <a href="en.html" hreflang="en" lang="en" aria-label="Switch to English">EN</a>
+    <div class="nav-links">
+      <a href="#desktop">桌面工作台</a>
+      <a href="#platform">平台控制台</a>
+      <a href="#qq">QQ 远程通道</a>
+      <a href="#game">小游戏</a>
+      <a href="#craft">实现记录</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="语言选择">
+      <a href="en.html" hreflang="en" aria-label="Switch to English">En</a>
+      <span class="active" aria-current="page">Cn</span>
+    </div>
   </div>
 </nav>
 
