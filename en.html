@@ -127,9 +127,8 @@
   <div class="eyebrow">Unimere · Personal workspace</div>
   <h1>Many flows. One clear space.</h1>
   <p class="lede">
-    Unimere is a personal workspace I am building. The web app covers chat, reminders, jobs, and artifacts.
-    An official QQ bot sends requests to my machine and returns images, documents, or HTML results.
-    The interface uses React, with FastAPI and SQLite on the backend.
+    Unimere is a personal workspace I'm building: the web app handles chat, reminders, jobs, and artifacts;
+    an official QQ bot sends requests to my machine and returns images, documents, or HTML results.
   </p>
   <div class="chips">
     <span class="chip">Python 3.12</span>
@@ -151,27 +150,27 @@
 
 <section id="desktop" class="wrap">
   <div class="sec-head"><span class="num">01</span><h2>Desktop workspace</h2></div>
-  <p class="sec-lead">Chat, reminders, jobs, memories, and usage each have their own page. These are the main screens.</p>
+  <p class="sec-lead">Five pages, each with one job.</p>
   <div class="grid">
     <figure>
       <a href="images/chat.webp" target="_blank"><img src="images/chat.webp" alt="Chat page" loading="lazy"></a>
-      <figcaption><b>Chat</b>Entering “Remind me to stretch in 10 minutes” creates a reminder and returns its ID, so it can be changed or cancelled later.</figcaption>
+      <figcaption><b>Chat</b>“Remind me to stretch in 10 minutes” creates a reminder and returns its ID; it can be edited or cancelled later.</figcaption>
     </figure>
     <figure>
       <a href="images/reminders.webp" target="_blank"><img src="images/reminders.webp" alt="Reminders page" loading="lazy"></a>
-      <figcaption><b>Reminders</b>Each reminder is stored separately with pending and delivered states, independent of a particular chat message.</figcaption>
+      <figcaption><b>Reminders</b>Each one is stored separately with pending and delivered states, not tied to a chat message.</figcaption>
     </figure>
     <figure>
       <a href="images/tasks.webp" target="_blank"><img src="images/tasks.webp" alt="Job center" loading="lazy"></a>
-      <figcaption><b>Job center</b>Manage RSS and webpage-change monitors, then inspect run records and delivery results.</figcaption>
+      <figcaption><b>Job center</b>RSS and page-change monitors live here, with run records and delivery results.</figcaption>
     </figure>
     <figure>
       <a href="images/memory.webp" target="_blank"><img src="images/memory.webp" alt="Memory and knowledge base" loading="lazy"></a>
-      <figcaption><b>Memory</b>Fact cards persist across sessions with a key, content, source, and creation time. They can be searched, edited, and deleted.</figcaption>
+      <figcaption><b>Memory</b>Fact cards that persist across sessions: key, content, source, and write time, all searchable, editable, and deletable.</figcaption>
     </figure>
     <figure>
       <a href="images/quota.webp" target="_blank"><img src="images/quota.webp" alt="Usage page" loading="lazy"></a>
-      <figcaption><b>Usage</b>Track request counts and model budgets. Pending requests are marked separately, and local records are not the provider's bill.</figcaption>
+      <figcaption><b>Usage</b>Request counts and model budgets. Pending requests are marked separately — local records are not the provider's bill.</figcaption>
     </figure>
   </div>
 </section>
@@ -179,33 +178,33 @@
 <section id="platform" class="wrap">
   <div class="sec-head"><span class="num">02</span><h2>Platform console</h2></div>
   <p class="sec-lead">
-    The console tracks queues, nodes, sandboxes, and executions. Request acceptance, terminal states, and capacity changes
-    are counted separately, so a 202 response is not mistaken for a successful run.
+    The console covers queues, nodes, sandboxes, and executions. Acceptance, terminal state, and capacity changes
+    are counted separately, so a 202 isn't read as a finished run.
   </p>
   <div class="grid">
     <figure>
       <a href="images/pf-overview.webp" target="_blank"><img src="images/pf-overview.webp" alt="Platform overview" loading="lazy"></a>
-      <figcaption><b>Overview</b>Check the current queue length, execution success rate, and node status.</figcaption>
+      <figcaption><b>Overview</b>Queue length, success rate, node status.</figcaption>
     </figure>
     <figure>
       <a href="images/pf-nodes.webp" target="_blank"><img src="images/pf-nodes.webp" alt="Node management" loading="lazy"></a>
-      <figcaption><b>Nodes</b>Only nodes in the <code>accepting</code> state count towards actual capacity. Cordon, drain, and expired leases are marked separately.</figcaption>
+      <figcaption><b>Nodes</b>Only <code>accepting</code> nodes count toward real capacity; cordon, drain, and expired leases are marked.</figcaption>
     </figure>
     <figure>
       <a href="images/pf-sandbox.webp" target="_blank"><img src="images/pf-sandbox.webp" alt="Sandbox list" loading="lazy"></a>
-      <figcaption><b>Sandboxes</b>Ephemeral workspaces have a TTL and are reclaimed on expiry. The list records creation time, owning node, and expiry time.</figcaption>
+      <figcaption><b>Sandboxes</b>Ephemeral workspaces with a TTL, reclaimed on expiry; the list shows creation time, owning node, and expiry.</figcaption>
     </figure>
     <figure>
       <a href="images/pf-exec.webp" target="_blank"><img src="images/pf-exec.webp" alt="Execution details" loading="lazy"></a>
-      <figcaption><b>Executions</b>Cancelled runs are excluded from the success-rate denominator. p50 and p99 show “insufficient samples” when there is not enough data.</figcaption>
+      <figcaption><b>Executions</b>Cancellations are out of the success-rate denominator; p50 and p99 read “insufficient samples” when data is thin.</figcaption>
     </figure>
   </div>
-  <div class="note"><code>202</code> means accepted; <code>hold</code> does not mean scaled; available capacity is calculated from valid leases.</div>
+  <div class="note"><code>202</code> means accepted only; <code>hold</code> is not scaling; capacity is counted from valid leases.</div>
 </section>
 
 <section id="qq" class="wrap">
   <div class="sec-head"><span class="num">03</span><h2>QQ remote channel</h2></div>
-  <p class="sec-lead">Send a request in QQ and the local service returns the result. These screenshots are from actual runs.</p>
+  <p class="sec-lead">Send a request in QQ; the local service does the work and sends the result back.</p>
   <p class="sec-lead" style="margin-top:-8px">
     Early versions used NapCat with a secondary account, whose login session often expired. The current version uses
     an official QQ Open Platform bot over an outbound persistent connection, so no public IP address is needed.
@@ -213,22 +212,22 @@
   <div class="grid">
     <figure>
       <a href="images/qq-gdp.webp" target="_blank"><img src="images/qq-gdp.webp" alt="GDP composition poster" loading="lazy"></a>
-      <figcaption><b>“Share of industries in 2025 GDP”</b>A request for a statistical chart returns a GDP composition poster.</figcaption>
+      <figcaption><b>“Share of industries in 2025 GDP”</b>A GDP composition poster.</figcaption>
     </figure>
     <figure>
       <a href="images/qq-salary.webp" target="_blank"><img src="images/qq-salary.webp" alt="Average annual salary poster" loading="lazy"></a>
-      <figcaption><b>“Average annual salary in Beijing over three years”</b>The result shows the three-year trend and growth rate, with sources and methodology notes.</figcaption>
+      <figcaption><b>“Average annual salary in Beijing over three years”</b>Three-year trend and growth, with sources and methodology notes.</figcaption>
     </figure>
     <figure>
       <a href="images/qq-weather.webp" target="_blank"><img src="images/qq-weather.webp" alt="Weather poster" loading="lazy"></a>
-      <figcaption><b>“Shanghai weather for the past three days as a poster”</b>A weather request returns a Shanghai weather poster.</figcaption>
+      <figcaption><b>“Shanghai weather for the past three days as a poster”</b>A Shanghai weather poster.</figcaption>
     </figure>
   </div>
 
   <div class="grid" style="margin-top:16px">
     <figure style="grid-column:1/-1">
       <a href="images/qq-travel-chat.webp" target="_blank"><img src="images/qq-travel-chat.webp" alt="Long-form travel guide generation" loading="lazy"></a>
-      <figcaption><b>“Create a three-day Shanghai itinerary with images”</b>The bot first replies with an estimate, then sends illustrated guides for Day 1 through Day 3. Failed steps can be retried.</figcaption>
+      <figcaption><b>“Create a three-day Shanghai itinerary with images”</b>First an estimate, then Day 1–3 as illustrated long images; failed steps can be retried.</figcaption>
     </figure>
   </div>
 
@@ -246,13 +245,13 @@
       <figcaption><b>Day 3</b>Lujiazui · Riverside · Return trip</figcaption>
     </figure>
   </div>
-  <div class="note">Posters retain their sources and verification status. Figures that were not checked online are marked separately.</div>
-  <p style="margin-top:20px;font-size:14px;color:var(--muted)">The same channel can generate HTML as well as images. The Minesweeper game below was one such test.</p>
+  <div class="note">Posters keep their sources and verification status; figures not checked online are marked.</div>
+  <p style="margin-top:20px;font-size:14px;color:var(--muted)">The same channel also produces HTML files.</p>
 </section>
 
 <section id="game" class="wrap">
   <div class="sec-head"><span class="num">04</span><h2>Minesweeper generated from QQ</h2><span class="chip">Requested from mobile QQ</span></div>
-  <p class="sec-lead">This test started in QQ and returned a single HTML file. It is about 32 KB, runs directly in a browser, and has no dependencies to install.</p>
+  <p class="sec-lead">This one started in QQ and came back as a single HTML file: about 32 KB, opens and plays, nothing to install.</p>
   <div class="flow">
     <span class="step">Request from mobile QQ</span><span class="arrow">→</span>
     <span class="step qwen">Qwen · Plan</span><span class="arrow">→</span>
@@ -260,7 +259,7 @@
     <span class="step qwen">Qwen · Review</span><span class="arrow">→</span>
     <span class="step">Local packaging · QQ reply</span>
   </div>
-  <p class="sec-lead" style="margin:14px 0 24px">Qwen planned and reviewed the implementation, while DeepSeek wrote the code. The flow above is the actual sequence used for this run.</p>
+  <p class="sec-lead" style="margin:14px 0 24px">Qwen planned and reviewed; DeepSeek wrote the code.</p>
   <figure>
     <a href="images/game-minesweeper.webp" target="_blank"><img src="images/game-minesweeper.webp" alt="Minesweeper game interface" loading="lazy"></a>
     <figcaption>
@@ -272,12 +271,11 @@
   <div style="margin-top:20px">
     <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">Play Minesweeper →</a>
   </div>
-  <div class="note">Code generation and review call external models; file packaging and QQ delivery run locally. The playable version is kept here so the result can be checked directly.</div>
+  <div class="note">Code generation and review call external models; packaging and QQ delivery run locally.</div>
 </section>
 
 <section id="craft" class="wrap">
   <div class="sec-head"><span class="num">05</span><h2>Implementation notes</h2></div>
-  <p class="sec-lead">A few implementation details related to reliability.</p>
   <ul class="craft">
     <li><b>Multi-agent handoffs</b><span>Leases, fencing, and idempotent steps coordinate handoffs. Runs can resume or continue after interruption without two processes writing the same step.</span></li>
     <li><b>Test runner</b><span>SQLite and socket guards sit outside the tests. A test fails if it touches the real database or the network.</span></li>
