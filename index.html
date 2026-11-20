@@ -127,9 +127,8 @@
   <div class="eyebrow">Many flows. One clear space.</div>
   <h1>万流入泓，诸事归一。</h1>
   <p class="lede">
-    Unimere（一泓）是我正在做的个人工作台。网页端用于对话、提醒、任务和产物管理；
+    Unimere（一泓）是我在做的个人工作台：网页端管对话、提醒、任务和产物；
     QQ 官方机器人把需求发到本机，再把图片、文档或 HTML 结果发回来。
-    界面使用 React，后端和存储使用 FastAPI 与 SQLite。
   </p>
   <div class="chips">
     <span class="chip">Python 3.12</span>
@@ -151,27 +150,27 @@
 
 <section id="desktop" class="wrap">
   <div class="sec-head"><span class="num">01</span><h2>桌面工作台</h2></div>
-  <p class="sec-lead">对话、提醒、任务、记忆和额度分别放在独立页面。下面是几张主要界面。</p>
+  <p class="sec-lead">五个页面，各管一件事。</p>
   <div class="grid">
     <figure>
       <a href="images/chat.webp" target="_blank"><img src="images/chat.webp" alt="对话页" loading="lazy"></a>
-      <figcaption><b>对话</b>输入“10 分钟后提醒我起身活动”，会创建提醒并返回编号，之后可以修改或撤销。</figcaption>
+      <figcaption><b>对话</b>输入“10 分钟后提醒我起身活动”，会建一条提醒并返回编号，之后能改能撤。</figcaption>
     </figure>
     <figure>
       <a href="images/reminders.webp" target="_blank"><img src="images/reminders.webp" alt="提醒页" loading="lazy"></a>
-      <figcaption><b>提醒</b>每条提醒单独保存，有待发送和已送达状态，不依赖某段聊天记录。</figcaption>
+      <figcaption><b>提醒</b>每条单独存，有“待发送 / 已送达”两个状态，不挂在某段聊天记录上。</figcaption>
     </figure>
     <figure>
       <a href="images/tasks.webp" target="_blank"><img src="images/tasks.webp" alt="任务中心" loading="lazy"></a>
-      <figcaption><b>任务中心</b>管理 RSS 和网页变更监控，查看执行记录与投递结果。</figcaption>
+      <figcaption><b>任务中心</b>RSS 和网页变更监控都在这里，能看执行记录和投递结果。</figcaption>
     </figure>
     <figure>
       <a href="images/memory.webp" target="_blank"><img src="images/memory.webp" alt="记忆 / 知识库" loading="lazy"></a>
-      <figcaption><b>记忆</b>保存跨会话使用的事实卡，包括 key、内容、来源和写入时间，支持搜索、修改和删除。</figcaption>
+      <figcaption><b>记忆</b>跨会话用的事实卡，key、内容、来源、写入时间都能查、能改、能删。</figcaption>
     </figure>
     <figure>
       <a href="images/quota.webp" target="_blank"><img src="images/quota.webp" alt="额度页" loading="lazy"></a>
-      <figcaption><b>额度</b>记录请求次数和模型预算。结算中的请求单独标注，本地记录不等于服务商账单。</figcaption>
+      <figcaption><b>额度</b>请求次数和模型预算。结算中的请求单独标出来——本地记录不等于服务商账单。</figcaption>
     </figure>
   </div>
 </section>
@@ -179,35 +178,35 @@
 <section id="platform" class="wrap">
   <div class="sec-head"><span class="num">02</span><h2>平台控制台</h2></div>
   <p class="sec-lead">
-    控制台用于检查队列、节点、沙箱和执行。请求接收、执行终态和容量变化分开统计，
-    避免把一个 202 响应当成任务已经成功。
+    控制台看队列、节点、沙箱和执行。请求接收、执行终态、容量变化分开统计，
+    不把一个 202 当成任务成功。
   </p>
   <div class="grid">
     <figure>
       <a href="images/pf-overview.webp" target="_blank"><img src="images/pf-overview.webp" alt="平台总览" loading="lazy"></a>
-      <figcaption><b>总览</b>查看当前队列长度、执行成功率和节点状态。</figcaption>
+      <figcaption><b>总览</b>队列长度、执行成功率、节点状态。</figcaption>
     </figure>
     <figure>
       <a href="images/pf-nodes.webp" target="_blank"><img src="images/pf-nodes.webp" alt="节点管理" loading="lazy"></a>
-      <figcaption><b>节点</b>只有 <code>accepting</code> 的节点计入实际容量；cordon、drain 和租约过期会单独标注。</figcaption>
+      <figcaption><b>节点</b>只有 <code>accepting</code> 的节点算实际容量；cordon、drain、租约过期单独标。</figcaption>
     </figure>
     <figure>
       <a href="images/pf-sandbox.webp" target="_blank"><img src="images/pf-sandbox.webp" alt="沙箱列表" loading="lazy"></a>
-      <figcaption><b>沙箱</b>一次性工作区带 TTL，到期后自动回收。列表记录创建时间、归属节点和到期时间。</figcaption>
+      <figcaption><b>沙箱</b>一次性工作区带 TTL，到期回收；列表里有创建时间、归属节点、到期时间。</figcaption>
     </figure>
     <figure>
       <a href="images/pf-exec.webp" target="_blank"><img src="images/pf-exec.webp" alt="执行详情" loading="lazy"></a>
-      <figcaption><b>执行</b>成功率的分母不含取消；p50 / p99 样本不足时显示“样本不足”。</figcaption>
+      <figcaption><b>执行</b>成功率的分母不含取消；p50 / p99 样本不足就显示“样本不足”。</figcaption>
     </figure>
   </div>
   <div class="note">
-    <code>202</code> 表示请求已接收；<code>hold</code> 不等于扩容；可用容量按有效租约计算。
+    <code>202</code> 只表示已接收；<code>hold</code> 不等于扩容；容量按有效租约算。
   </div>
 </section>
 
 <section id="qq" class="wrap">
   <div class="sec-head"><span class="num">03</span><h2>QQ 远程通道</h2></div>
-  <p class="sec-lead">在 QQ 里发需求，本机执行后把结果发回来。下面是几次运行留下的截图。</p>
+  <p class="sec-lead">在 QQ 里发需求，本机跑完把结果发回来。</p>
   <p class="sec-lead" style="margin-top:-8px">
     早期版本用 NapCat 接小号，登录态经常失效。现在改用 QQ 开放平台的官方机器人，
     通过出站长连接收发消息，不需要公网 IP。
@@ -215,22 +214,22 @@
   <div class="grid">
     <figure>
       <a href="images/qq-gdp.webp" target="_blank"><img src="images/qq-gdp.webp" alt="GDP 结构海报" loading="lazy"></a>
-      <figcaption><b>“各级产业在 2025 年 GDP 占比图”</b>输入统计图需求，返回一张 GDP 结构海报。</figcaption>
+      <figcaption><b>“各级产业在 2025 年 GDP 占比图”</b>一张 GDP 结构海报。</figcaption>
     </figure>
     <figure>
       <a href="images/qq-salary.webp" target="_blank"><img src="images/qq-salary.webp" alt="人均年薪海报" loading="lazy"></a>
-      <figcaption><b>“北京三年的人均年薪统计图”</b>返回三年趋势和增速，图里附数据来源与口径说明。</figcaption>
+      <figcaption><b>“北京三年的人均年薪统计图”</b>三年趋势和增速，图里附数据来源与口径说明。</figcaption>
     </figure>
     <figure>
       <a href="images/qq-weather.webp" target="_blank"><img src="images/qq-weather.webp" alt="天气海报" loading="lazy"></a>
-      <figcaption><b>“查一下上海近三天的天气，海报形式”</b>输入天气需求，返回一张上海天气海报。</figcaption>
+      <figcaption><b>“查一下上海近三天的天气，海报形式”</b>一张上海天气海报。</figcaption>
     </figure>
   </div>
 
   <div class="grid" style="margin-top:16px">
     <figure style="grid-column:1/-1">
       <a href="images/qq-travel-chat.webp" target="_blank"><img src="images/qq-travel-chat.webp" alt="长图攻略生成过程" loading="lazy"></a>
-      <figcaption><b>“帮我做一份上海三日旅游攻略，图文结合”</b>先回复预计耗时，再分条推送 Day 1 到 Day 3 的图文长图，失败后可以重试。</figcaption>
+      <figcaption><b>“帮我做一份上海三日旅游攻略，图文结合”</b>先回预计耗时，再按 Day 1–3 分条推长图，失败能重试。</figcaption>
     </figure>
   </div>
 
@@ -248,13 +247,13 @@
       <figcaption><b>Day 3</b>陆家嘴 · 滨江 · 返程</figcaption>
     </figure>
   </div>
-  <div class="note">海报底部保留数据来源和核实状态；未联网核实的数字会单独标注。</div>
-  <p style="margin-top:20px;font-size:14px;color:var(--muted)">除了图片，这条通道也用来生成 HTML。下面的扫雷就是一次实际测试。</p>
+  <div class="note">海报底部保留数据来源和核实状态，没联网核实的数字单独标注。</div>
+  <p style="margin-top:20px;font-size:14px;color:var(--muted)">这条通道也出 HTML 文件。</p>
 </section>
 
 <section id="game" class="wrap">
   <div class="sec-head"><span class="num">04</span><h2>从 QQ 生成一个扫雷游戏</h2><span class="chip">来自手机 QQ</span></div>
-  <p class="sec-lead">这次测试从 QQ 发出需求，返回单个 HTML 文件。文件约 32 KB，打开即可玩，不需要安装依赖。</p>
+  <p class="sec-lead">这次从 QQ 发出需求，返回单个 HTML 文件。约 32 KB，打开即玩，不用装依赖。</p>
   <div class="flow">
     <span class="step">手机 QQ 发出需求</span><span class="arrow">→</span>
     <span class="step qwen">千问 · 定计划</span><span class="arrow">→</span>
@@ -262,23 +261,22 @@
     <span class="step qwen">千问 · 复审</span><span class="arrow">→</span>
     <span class="step">本机打包 · 回传 QQ</span>
   </div>
-  <p class="sec-lead" style="margin:14px 0 24px">千问负责计划和复审，DeepSeek 负责写代码。上面的流程对应这次实际生成过程。</p>
+  <p class="sec-lead" style="margin:14px 0 24px">千问负责计划和复审，DeepSeek 负责写代码。</p>
   <figure>
     <a href="images/game-minesweeper.webp" target="_blank"><img src="images/game-minesweeper.webp" alt="扫雷游戏界面" loading="lazy"></a>
     <figcaption>
-      <b>扫雷 · 千问定计划 + DeepSeek 写代码 + 千问复审</b>三档难度（9×9 / 10 雷起步），计时与最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
-      方向键移动 + <code>Enter</code> 翻开 + <code>F</code> 插旗 + <code>R</code> 重开。需求从 QQ 发出，成品从 QQ 回传。
+      <b>扫雷 · 千问定计划 + DeepSeek 写代码 + 千问复审</b>三档难度（9×9 / 10 雷起步），计时和最佳成绩；左键翻开、右键插旗、双击数字“和弦”开一片；
+      方向键移动，<code>Enter</code> 翻开，<code>F</code> 插旗，<code>R</code> 重开。需求从 QQ 发出，成品从 QQ 回传。
     </figcaption>
   </figure>
   <div style="margin-top:20px">
     <a class="big-link" href="minesweeper.html" target="_blank" rel="noopener">在线玩一局 →</a>
   </div>
-  <div class="note">代码生成和复审调用外部模型，文件整理与 QQ 回传由本机完成。这里保留在线试玩，方便直接检查结果。</div>
+  <div class="note">代码生成和复审调用外部模型，文件整理与 QQ 回传由本机完成。</div>
 </section>
 
 <section id="craft" class="wrap">
   <div class="sec-head"><span class="num">05</span><h2>实现记录</h2></div>
-  <p class="sec-lead">几处与运行可靠性有关的实现。</p>
   <ul class="craft">
     <li><b>多 Agent 接力</b><span>用租约、fencing 和步骤幂等处理任务接力；中断后可以 resume / continue，避免两个进程同时写同一步。</span></li>
     <li><b>测试运行器</b><span>在测试外加 SQLite 和 socket 守卫，测试如果访问真实数据库或网络就直接失败。</span></li>
